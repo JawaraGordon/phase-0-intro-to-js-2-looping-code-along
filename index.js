@@ -1,46 +1,28 @@
 // Code your solutions in this file
-// for (let age = 30; age < 40; age++) {
-//     console.log(`I'm ${age} years old. Happy Birthday to me!`);
-//     debugger;
-// }
 
-// const gifts = ["teddy bear", "drone", "doll"];
+beforeEach( () => {
+  spy = sinon.spy( console, 'log' );
+} );
 
-//     function wrapGifts(gifts) {
-//         for (let i = 0; i < gifts.length; i++) {    
-//             console.log(`Wrapped ${gifts[i]} and added some ribbon!`);
-//             // debugger;
-//         }
-//         return gifts;
-//     }
+function writeCards(names, event){
+    let cardsForFriends = [];
 
-//     wrapGifts(gifts);
-
-
-
-// function writeCards(names, event){
-//     let cardsForFriends = [];
-
-//     for (let i = 0; i < names.length; i++)
+    for (let i = 0; i < names.length; i++)
     
-//     cardsForFriends.push(`Dear ${names[i]}, have a safe and fun ${event}!`);
+    cardsForFriends.push(`Thank you, ${names[i]}, for the wonderful ${event} gift!`);
 
-//     return console.log(cardsForFriends);
+    return cardsForFriends;
 
-// }
+}
 
-// writeCards(["Zelle", "Cairo", "George"], "Birthday");
+afterEach( () => {
+  spy.restore();
+} );
 
-// function plantGarden() {
-//     let keepWorking = true;
-//     while (keepWorking) {
-//       chooseSeedLocation();
-//       plantSeed();
-//       waterSeed();
-//       keepWorking = checkForMoreSeeds();
-//     }
-//   }
-  
+beforeEach( () => {
+  spy = sinon.spy( console, 'log' );
+} );
+
 
 function countDown(){
     let count = 10;
@@ -49,3 +31,7 @@ while (count >= 0) {
 }
 }
 countDown();
+
+afterEach( () => {
+  spy.restore();
+} );
